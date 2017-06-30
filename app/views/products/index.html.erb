@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-
+<h2>Our Newest Products:</h2>
+<% @products.most_recent.each do |prod| %>
+<li><%= link_to prod.name, prod %></li>
+<% end %>
 <table>
   <thead>
     <tr>
@@ -14,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
+    <% @products.by_country.each do |product| %>
       <tr>
         <td><%= product.name %></td>
         <td><%= product.cost %></td>

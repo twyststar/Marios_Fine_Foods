@@ -14,7 +14,7 @@ Review.destroy_all
 
   product = Product.create!(
     name: Faker::Food.unique.ingredient,
-    description: Faker::Lorem.sentence(20, false, 0).chop,
+    description: Faker::StarWars.quote,
     cost: Faker::Commerce.price,
     country: Faker::Address.country)
   @products.push(product.id)
@@ -24,7 +24,7 @@ end
   Review.create!(
     name: Faker::Name.name,
     rating: Faker::Number.between(1, 5),
-    content_body: Faker::StarWars.quote,
+    content_body: Faker::Lorem.paragraph,
     product_id: Faker::Number.between(@products[0],@products[49])
   )
 end

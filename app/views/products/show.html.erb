@@ -4,7 +4,7 @@
   <strong>Name:</strong>
   <%= @product.name %>
 </p>
-
+<p>Average Rating: </p> <%= @product.average_rating %>
 <p>
   <strong>Cost:</strong>
   <%= @product.cost %>
@@ -19,19 +19,23 @@
   <strong>Country:</strong>
   <%= @product.country %>
 </p>
+
 <div class="review-list">
   <% if @product.reviews.any? %>
-     <h3>Reviews for this product:</h3>
-     <ul>
-       <% @product.reviews.each do |rev| %>
-       <li>Rating:<%= rev.rating %>, <%= rev.content_body %></li>
-     </ul>
-     <% end %>
+    <h3>Reviews for this product:</h3>
+    <% @product.reviews.most_recent.each do |rev| %>
+      <div class="well">
+      <h3>Rating:<%= rev.rating %></h3>
+      <p><%= rev.content_body %></p>
+      <h5>By: <%= rev.name %></h5>
+      </div>
+    <% end %>
   <% else %>
     <h3>Be the first to review this product!</h3>
     <%= link_to 'Review', new_product_review_path(@product) %>
   <% end %>
 </div>
+<br>
 <%= link_to 'Add Review', new_product_review_path(@product) %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
