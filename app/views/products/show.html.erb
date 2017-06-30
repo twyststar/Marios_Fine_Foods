@@ -19,6 +19,19 @@
   <strong>Country:</strong>
   <%= @product.country %>
 </p>
-
+<div class="review-list">
+  <% if @product.reviews.any? %>
+     <h3>Reviews for this product:</h3>
+     <ul>
+       <% @product.reviews.each do |rev| %>
+       <li>Rating:<%= rev.rating %>, <%= rev.content_body %></li>
+     </ul>
+     <% end %>
+  <% else %>
+    <h3>Be the first to review this product!</h3>
+    <%= link_to 'Review', new_product_review_path(@product) %>
+  <% end %>
+</div>
+<%= link_to 'Add Review', new_product_review_path(@product) %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

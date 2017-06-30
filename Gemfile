@@ -25,12 +25,9 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   #rails generate rspec:install was not working, added the following based on github rspec-rails error response
-  gem "rspec-core", :github => "rspec/rspec-core"
-  gem "rspec-expectations", :github => "rspec/rspec-expectations"
-  gem "rspec-mocks", :github => "rspec/rspec-mocks"
-  gem "rspec-support", :github => "rspec/rspec-support"
-  gem "rspec-rails", :github => "rspec/rspec-rails"
   
+  gem "rspec-rails"
+
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'launchy'
   gem 'pry'
