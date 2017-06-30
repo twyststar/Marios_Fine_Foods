@@ -1,19 +1,6 @@
-<ul>
-  <% @products.each do |product| %>
-
-      <li><%= product.name %>,
-
-
-      <%= product.cost %>,
-
-
-      <%= product.description %>,
-
-
-      <%= product.country %></li>
-      <li><%= link_to 'Show', product %></li>
-      <li><%= link_to 'Edit', edit_product_path(product) %></li>
-      <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-  <% end %>
-</ul>
+<h1>Welcome to Mario's Fine Imports!</h1>
+<%= link_to 'All Products', products_path %>
+<h2>Our Newest Products:</h2>
+<% @products.most_recent.each do |prod| %>
+<li><%= link_to prod.name, prod %></li>
+<% end %>

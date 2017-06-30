@@ -1,24 +1,20 @@
 <p id="notice"><%= notice %></p>
+<div class="prod">
+  <h1><%= @product.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-<p>Average Rating: </p> <%= @product.average_rating %>
-<p>
-  <strong>Cost:</strong>
-  <%= @product.cost %>
-</p>
+  <p><strong>Description:</strong>
+    <br>
+    <span class="desc"><%= @product.description %></span></p>
+  <p><strong>Country:</strong>
+    <br>
+    <%= @product.country %></p>
+  <p>Average Rating: <%= @product.average_rating %></p>
+  <p class='right'>
+    <strong>Cost: </strong>
+    <%= @product.cost %>
+  </p>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @product.country %>
-</p>
 
 <div class="review-list">
   <% if @product.reviews.any? %>

@@ -1,10 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to 'Home', '/' %>
 <h1>Products</h1>
-<h2>Our Newest Products:</h2>
-<% @products.most_recent.each do |prod| %>
-<li><%= link_to prod.name, prod %></li>
-<% end %>
 <table>
   <thead>
     <tr>
@@ -19,11 +15,10 @@
   <tbody>
     <% @products.by_country.each do |product| %>
       <tr>
-        <td><%= product.name %></td>
+        <td><%=link_to product.name, product %></td>
         <td><%= product.cost %></td>
         <td><%= product.description %></td>
         <td><%= product.country %></td>
-        <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
