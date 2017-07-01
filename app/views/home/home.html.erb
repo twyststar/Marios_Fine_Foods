@@ -1,6 +1,15 @@
 <h1>Welcome to Mario's Fine Imports!</h1>
-<%= link_to 'All Products', products_path %>
+<h3><%= link_to 'All Products', products_path %></h3>
 <h2>Our Newest Products:</h2>
-<% @products.most_recent.each do |prod| %>
-<li><%= link_to prod.name, prod %></li>
-<% end %>
+
+  <% @products.most_recent.each do |prod| %>
+  <div class="panel col-xs-3">
+    <div class="panel-header">
+      <h2><%= link_to prod.name, prod %></h2>
+    </div>
+    <div class="panel-body">
+      <h4 class="desc"> <%= prod.description %></h4>
+      <h5>Average Rating: <%= prod.average_rating %></h5>
+    </div>
+  </div>
+  <% end %>

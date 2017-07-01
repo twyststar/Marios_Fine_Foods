@@ -1,6 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+  color: white;
+  background-image: url('browns.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 0 200px;
+  padding-top: 50px;
+  margin-top: 200px;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 800px;
+}
+
 .jumbotron {
   z-index: 10;
   font-family: 'Old Standard TT', serif;
@@ -14,20 +31,7 @@
   background-size: cover;
   padding-right: 3ems;
 }
-html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-  color: white;
-  background-image: url('browns.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0 0 200px;
-  padding-top: 35px;
-  margin-top: 200px;
-  font-family: 'Open Sans', sans-serif;
-}
+
 .footer{
   font-family: 'Old Standard TT', serif;
   background-image: url('ingredient.jpg');
@@ -40,6 +44,7 @@ body {
   text-align: center;
   color: black;
 }
+
 .well {
   opacity: .8;
   color: black;
@@ -64,17 +69,21 @@ body {
 .right {
   float: right;
 }
+
 .desc {
   font-style: italic;
 }
+
 .intro{
   font-weight: bold;
   font-size: 2em;
 }
+
 .about {
   padding-top: 3%;
   clear: both;
 }
+
 .nav{
   padding-left: 40%;
   bottom: 0;
@@ -83,11 +92,35 @@ body {
     color: white;
   }
 }
+
 .nav-item {
   background-color: #a8a8a8;
   opacity: .8;
 }
+
 .center {
   border-left: 1px solid white;
   border-right: 1px solid white;
+}
+
+a {
+  font-family: 'Old Standard TT', serif;
+  font-weight: bold;
+  color: #d5dae2;
+  text-decoration: underline;
+}
+
+
+.panel {
+  min-height: 280px;
+  margin: 1%;
+  opacity: .8;
+  color: black;
+  background-color: #a8a8a8;
+	border: 1px  solid #fff;
+	border-bottom: 1px solid #fff;
+	margin-bottom: 1px;
+  width: 30%;
+  border-radius: 2%;
+  padding: 2%;
 }
