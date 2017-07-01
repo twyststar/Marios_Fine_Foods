@@ -24,7 +24,7 @@ end
   Review.create!(
     name: Faker::Name.name,
     rating: Faker::Number.between(1, 5),
-    content_body: Faker::Lorem.paragraph,
+    content_body: Faker::Lorem.sentence(20),
     product_id: Faker::Number.between(@products[0],@products[49])
   )
 end
