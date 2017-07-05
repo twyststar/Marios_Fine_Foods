@@ -19,13 +19,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-
+gem 'bcrypt'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   #rails generate rspec:install was not working, added the following based on github rspec-rails error response
-  
+
   gem "rspec-rails"
 
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
